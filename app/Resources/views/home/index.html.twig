@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul class="navi">
+        {% if is_granted('ROLE_USER') %}
+            <li><a href="{{ path('fos_user_security_logout') }}" class="btn btn-danger">Logout</a></li>
+        {% else %}
+            <li><a href="{{ path('fos_user_security_login') }}" class="btn btn-primary">Login</a></li>
+        {% endif %}
+    </ul>
+{% endblock %}
+
