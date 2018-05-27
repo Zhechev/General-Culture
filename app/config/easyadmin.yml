@@ -1,0 +1,8 @@
+easy_admin:
+    entities:
+        News:
+            class: AppBundle\Entity\News
+            label: News
+        Article:
+            class: AppBundle\Entity\Article
+            label: Articles
