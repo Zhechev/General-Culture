@@ -2,12 +2,21 @@
 
 namespace AppBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ArticleController extends Controller
 {
-    public function indexAction($name)
+    /**
+     * @Route("/history", name="historyArticles")
+     */
+    public function getHistoryArticles()
     {
-        return $this->render('', array('name' => $name));
+        $em = $this->getDoctrine()->getManager();
+        $articles = $em->getRepository('AppBundle:Article')->findAll();
+
+        return $this->render('articles/articles.html.twig', [
+            'articles' => $articles
+        ]);
     }
 }

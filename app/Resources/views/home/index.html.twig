@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% include 'home/header.html.twig' %}
     <ul class="navi">
         {% if is_granted('ROLE_USER') %}
             <li><a href="{{ path('fos_user_security_logout') }}" class="btn btn-danger">Logout</a></li>
@@ -8,111 +9,6 @@
             <li><a href="{{ path('fos_user_security_login') }}" class="btn btn-primary">Login</a></li>
         {% endif %}
     </ul>
-
-
-    <!-- Preloader -->
-    <div class="preloader"></div>
-
-    <!-- Top Header_Area -->
-    <section class="top_header_area">
-        <div class="container">
-            <ul class="nav navbar-nav top_nav">
-                <li><a href="#"><i class="fa fa-phone"></i>+1 (168) 314 5016</a></li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i>info@thethemspro.com</a></li>
-                <li><a href="#"><i class="fa fa-clock-o"></i>Mon - Sat 12:00 - 20:00</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right social_nav">
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-            </ul>
-        </div>
-    </section>
-    <!-- End Top Header_Area -->
-
-    <!-- Header_Area -->
-    <nav class="navbar navbar-default header_aera" id="main_navbar">
-        <div class="container">
-            <!-- searchForm -->
-            <div class="searchForm">
-                <form action="#" class="row m0">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                        <input type="search" name="search" class="form-control" placeholder="Type & Hit Enter">
-                        <span class="input-group-addon form_hide"><i class="fa fa-times"></i></span>
-                    </div>
-                </form>
-            </div><!-- End searchForm -->
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="col-md-2 p0">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#min_navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><img src="{{ asset('images/logo.png') }}" alt=""></a>
-                </div>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="col-md-10 p0">
-                <div class="collapse navbar-collapse" id="min_navbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="contact.html">Начало</a></li>
-                        <li class="dropdown submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">За нас</a>
-                            <ul class="dropdown-menu other_dropdwn">
-                                <li><a href="about.html">Хората</a></li>
-                                <li><a href="about-2.html">Целта</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Езици</a>
-                            <ul class="dropdown-menu other_dropdwn">
-                                <li><a href="services.html">Английски</a></li>
-                                <li><a href="services-2.html">Испански</a></li>
-                                <li><a href="services-2.html">Немски</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Други</a>
-                            <ul class="dropdown-menu other_dropdwn">
-                                <li><a href="services.html">Бит</a></li>
-                                <li><a href="services-2.html">Култура</a></li>
-                                <li><a href="services-2.html">Политика</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Предмети</a>
-                            <ul class="dropdown-menu other_dropdwn">
-                                <li><a href="services.html">История</a></li>
-                                <li><a href="services-2.html">Математика</a></li>
-                                <li><a href="services-2.html">Български език</a></li>
-                                <li><a href="services-2.html">География</a></li>
-                                <li><a href="services-2.html">Физика</a></li>
-                                <li><a href="services-2.html">Химия</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Новини</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ path('news') }}">Новини</a></li>
-                                <li><a href="blog-2.html">Любопитно</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Контакти</a></li>
-                        <li><a href="#" class="nav_searchFrom"><i class="fa fa-search"></i></a></li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div>
-        </div><!-- /.container -->
-    </nav>
-    <!-- End Header_Area -->
 
     <!-- Slider area -->
     <section class="slider_area row m0">
@@ -716,59 +612,5 @@
         </div>
     </section>
     <!-- End Our Partners Area -->
-
-    <!-- Footer Area -->
-    <footer class="footer_area">
-        <div class="container">
-            <div class="footer_row row">
-                <div class="col-md-3 col-sm-6 footer_about">
-                    <h2>ABOUT OUR COMPANY</h2>
-                    <img src="images/footer-logo.png" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <ul class="socail_icon">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-sm-6 footer_about quick">
-                    <h2>Quick links</h2>
-                    <ul class="quick_link">
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Building Construction</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Home Renovation</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Hardwood Flooring</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Repairing Of Roof</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Commercial Construction</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Concreate Transport</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-sm-6 footer_about">
-                    <h2>Twitter Feed</h2>
-                    <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
-                    <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
-                </div>
-                <div class="col-md-3 col-sm-6 footer_about">
-                    <h2>CONTACT US</h2>
-                    <address>
-                        <p>Have questions, comments or just want to say hello:</p>
-                        <ul class="my_address">
-                            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>info@thethemspro.com</a></li>
-                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+880 123 456 789</a></li>
-                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Sector # 10, Road # 05, Plot # 31, Uttara, Dhaka 1230 </span></a></li>
-                        </ul>
-                    </address>
-                </div>
-            </div>
-        </div>
-        <div class="copyright_area">
-            Copyright 2017 All rights reserved. Designed by <a href="https://colorlib.com">Colorlib.</a>
-        </div>
-    </footer>
-    <!-- End Footer Area -->
-
-
-
-
+    {% include 'home/footer.html.twig' %}
 {% endblock %}
-
